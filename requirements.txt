@@ -2,5 +2,3 @@ requests
 pandas 
 tablib
 openpyxl
-date
-json
