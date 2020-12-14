@@ -6,6 +6,10 @@ from datetime import date
 import json
 import logging
 
+logging.basicConfig()
+logger = logging.getLogger(_name_)
+logger.setLevel(logging.INFO)
+
 def handler(event): 
 
 	logger.info("Received event: {}".format(event))
