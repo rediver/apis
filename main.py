@@ -4,6 +4,7 @@ import tablib
 import openpyxl
 from datetime import date
 import json
+import logging
 
 def handler(event): 
 
