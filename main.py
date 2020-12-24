@@ -24,9 +24,9 @@ def handler(event):
     
     for i in ldn_airports:
         x = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/pl/pln/pl-PL/KRK-sky/" + i + "/" + today
-		response = requests.request("GET", x, headers=headers)
-		response_data = response.json()
-		print(response_data)
+        response = requests.request("GET", x, headers=headers)
+        response_data = response.json()
+        print(response_data)
         ldn_arr.append(response_data)
 
     return ldn_arr
