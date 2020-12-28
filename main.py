@@ -10,6 +10,8 @@ logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+file_manager_path = os.getenv("FILE_MANAGER_PATH")
+
 def handler(event): 
     logger.info("Received event: {}".format(event))
 
@@ -30,7 +32,7 @@ def handler(event):
 
         ldn_arr.append(response_data)
 
-        with open('/file_manager/results.json', 'w') as f: 
+        with open(f'{file_manager_path}/results.json', 'w') as f: 
             json.dump(ldn_arr, f, indent=2)    
 
 
