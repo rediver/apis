@@ -5,6 +5,7 @@ import openpyxl
 from datetime import date
 import json
 import logging
+import os 
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -25,10 +26,10 @@ def handler(event):
     }
     
     for i in ldn_airports:
+
         x = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/pl/pln/pl-PL/KRK-sky/" + i + "/" + today
         response = requests.request("GET", x, headers=headers)
         response_data = response.json()
-        
 
         ldn_arr.append(response_data)
 
