@@ -26,7 +26,12 @@ def handler(event):
         x = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/pl/pln/pl-PL/KRK-sky/" + i + "/" + today
         response = requests.request("GET", x, headers=headers)
         response_data = response.json()
+        
+
         ldn_arr.append(response_data)
 
-    return ldn_arr
+        with open('results.json', 'w') as f: 
+            json.dump(ldn_arr, f, indent=2)    
+
+
 

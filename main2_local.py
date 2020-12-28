@@ -1,10 +1,6 @@
-import requests
-import pandas as pd
-import tablib
-import openpyxl
-from datetime import date
 import json
-import logging
+import requests
+from datetime import date
 
 ldn_airports = ["LHR-sky", "STN-sky", "LGW-sky", "LTN-sky"]
 ldn_arr = []
@@ -15,11 +11,16 @@ headers = {
     'x-rapidapi-host': "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
 }
 
+
 for i in ldn_airports:
     x = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/pl/pln/pl-PL/KRK-sky/" + i + "/" + today
     response = requests.request("GET", x, headers=headers)
     response_data = response.json()
-    ldn_arr.append(response_data)
+    	
+    ldn_arr.append(response_data)	
 
+    with open('results.json', 'w') as f: 
+    	json.dump(ldn_arr, f, indent=2)
+
+    
 print(ldn_arr)
-
