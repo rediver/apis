@@ -30,7 +30,7 @@ def handler(event):
 
         ldn_arr.append(response_data)
 
-        with open('results.json', 'w') as f: 
+        with open('/file_manager/results.json', 'w') as f: 
             json.dump(ldn_arr, f, indent=2)    
 
 
