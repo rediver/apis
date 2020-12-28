@@ -22,5 +22,3 @@ for i in ldn_airports:
     with open('results.json', 'w') as f: 
     	json.dump(ldn_arr, f, indent=2)
 
-    
-print(ldn_arr)

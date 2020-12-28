@@ -31,7 +31,7 @@ def handler(event):
 
         ldn_arr.append(response_data)
 
-        with open(f'{os.getenv("ARTIFACTS_PATH")}/results.json', 'w') as f: 
+        with open(f'{os.getenv("ARTIFACTS_PATH")}/results' + today '.json', 'w') as f: 
             json.dump(ldn_arr, f, indent=2)  
 
 
