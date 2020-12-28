@@ -34,4 +34,8 @@ def handler(event):
         with open(f'{os.getenv("ARTIFACTS_PATH")}/results' + today + '.json', 'w') as f: 
             json.dump(ldn_arr, f, indent=2)  
 
+        with open(f'{os.getenv("FILE_MANAGER_PATH")}/results' + today + '.json', 'w') as f: 
+            json.dump(ldn_arr, f, indent=2)  
+    
+
 
